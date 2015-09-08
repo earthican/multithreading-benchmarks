@@ -4,8 +4,8 @@ import Queue
 import threading
 import time
 
-NUM_ELEMENTS = int(30)
-NUM_THREADS = 10
+NUM_ELEMENTS = int(1e2)
+NUM_THREADS = 8
 
 def num_stringify(num):
     return ''.join([(c + ',') if i % 3 == 0 and i > 0 else c for i, c in enumerate(str(num)[::-1])][::-1])
@@ -33,7 +33,7 @@ class CounterThread(threading.Thread):
     def run(self):
         global COUNT_ELEMENTS
         global COUNT
-        while COUNT_ELEMENTS:
+        while COUNT_ELEMENTS > 0:
             LOCK.acquire()
             COUNT += 1
             COUNT_ELEMENTS -= 1
