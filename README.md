@@ -9,6 +9,7 @@ Data from measuring multithreading performance on my machine
 | :---- | :---- | ----: | 
 | Count 10,000,000 | Single | 00:00:00 | 
 | Count 10,000,000 | 8 | 00:01:23 | 
+| Count 10,000,000 | 32 | 00:01:12 | 
 
 ## What is this?
 

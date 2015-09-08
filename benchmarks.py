@@ -39,11 +39,11 @@ class CounterThread(threading.Thread):
             COUNT_ELEMENTS -= 1
             LOCK.release()
 
-def multithread():
+def multithread(num_threads=NUM_THREADS):
     threads = []
     thread_id = 1
     start = time.time()
-    for _ in range(NUM_THREADS):
+    for _ in range(num_threads):
         thread = CounterThread(thread_id)
         thread.start()
         threads.append(thread)
@@ -61,3 +61,4 @@ def multithread():
 if __name__ == '__main__':
     single_thread()
     multithread()
+    multithread(32)
