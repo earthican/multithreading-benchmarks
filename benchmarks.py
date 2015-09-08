@@ -4,7 +4,7 @@ import Queue
 import threading
 import time
 
-NUM_ELEMENTS = int(1e2)
+NUM_ELEMENTS = int(1e7)
 NUM_THREADS = 8
 
 def num_stringify(num):
